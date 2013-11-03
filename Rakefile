@@ -18,7 +18,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
   file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
-  file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
+  file_operation(Dir.glob('tmux/tmux.conf')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}')) 
@@ -26,6 +26,8 @@ task :install => [:submodule_init, :submodules] do
   end
 
   Rake::Task["install_prezto"].execute
+
+  Rake::Task["install_tmux_powerline"].execute
 
   install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
@@ -37,6 +39,12 @@ end
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
     install_prezto
+  end
+end
+
+task :install_tmux_powerline do
+  if want_to_install?('tmux config')
+    install_tmux_powerline
   end
 end
 
@@ -255,6 +263,18 @@ def install_prezto
     puts "Setting zsh as your default shell"
     run %{ chsh -s /bin/zsh }
   end
+end
+
+def install_tmux_powerline
+  puts
+  puts "Installing tmux-powerline..."
+
+  run %{
+    cd $HOME/.yadr/tmux
+    git clone https://github.com/erikw/tmux-powerline.git
+  }
+
+  run %{ ln -nfs "$HOME/.yadr/tmux/tmux-powerlinerc" "${ZDOTDIR:-$HOME}/.tmux-powerlinerc" }
 end
 
 def want_to_install? (section)
