@@ -8,3 +8,6 @@ bindkey '^r' history-incremental-search-backward    # [Ctrl-r] - Search backward
 # emacs style
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history

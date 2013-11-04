@@ -149,3 +149,16 @@ alias rs='rspec spec'
 alias sp='sprintly'
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
 alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
+
+# SSH Shortcuts
+alias pm='ssh -Y -l adam pm'
+alias teuber='ssh -Y -l adam teuber.psych.wisc.edu'
+alias luria='ssh -Y -l adam luria.psych.wisc.edu'
+alias hebb='ssh -Y -l adamr hebb.psych.wisc.edu'
+
+# Open terminal matlab
+alias mn='matlab -nodesktop -nosplash'
+alias mnr='matlab -nodesktop -nosplash -r'
+
+# Copy with progress (via rsync)
+alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"
