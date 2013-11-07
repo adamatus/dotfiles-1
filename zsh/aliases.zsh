@@ -18,11 +18,25 @@ alias psr='ps aux | grep ruby'
 # Moving around
 alias cdb='cd -'
 
+if [[ `uname` == 'Linux' ]]; then
+  alias ls="ls --color=auto"
+  alias ll='ls --color=auto -l'
+else
+  alias ls='ls -Gh'
+  alias ll='ls -alGh'
+fi
+alias ltr='ls -ltr'
+alias lla='ls -la'
+
+
 # Show human friendly numbers and colors
-alias df='df -h'
-alias ll='ls -alGh'
-alias ls='ls -Gh'
-alias du='du -h -d 2'
+if [[ `uname` == 'Linux' ]]; then
+  alias du='du -h'
+  alias df='df -h'
+else
+  alias df='df -h'
+  alias du='du -h -d 2'
+fi
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -37,6 +51,15 @@ MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
+
+# tmux
+alias tm="tmux"
+alias tml="tmux list-sessions"
+alias tma="tmux attach -t"
+
+# history
+alias h="history"
+
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
