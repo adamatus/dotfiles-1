@@ -167,6 +167,7 @@ alias zc='zeus console'
 
 # Rspec
 alias rs='rspec spec'
+alias sr='spring rspec'
 
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 alias sp='sprintly'
