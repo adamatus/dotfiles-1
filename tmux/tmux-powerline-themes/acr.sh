@@ -48,7 +48,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"load 57 255" \
 		#"tmux_mem_cpu_load 57 255" \
 		#"battery 137 127" \
-		"weather 99 255 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"weather 57 255" \
 		#"xkb_layout 125 117" \
 		"date_day 57 255" \
 		"date 57 255 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
