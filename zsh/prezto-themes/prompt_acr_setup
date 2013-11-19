@@ -37,52 +37,37 @@ function prompt_skwp_setup {
 
   add-zsh-hook precmd prompt_skwp_precmd
 
-  # Use extended color pallete if available.
-  if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    __PROMPT_SKWP_COLORS=(
-      "%F{81}"  # turquoise
-      "%F{166}" # orange
-      "%F{135}" # purple
-      "%F{161}" # hotpink
-      "%F{118}" # limegreen
-    )
-  else
-    __PROMPT_SKWP_COLORS=(
-      "%F{cyan}"
-      "%F{black}"
-      "%K{blue}%F{black}"
-      "%F{red}"
-      "%F{yellow}"
-      "%F{green}"
-      "%K{boldblack}%F{blue}"
-      "%K{blue}%B%F{black}"
-      "%K{black}%B%F{blue}"
-    )
-  fi
-
-  ADD_COL="%F{green}"
+  ADD_COL="%F{white}"
   DEL_COL="%F{black}"
   MOD_COL="%F{red}"
-  UNT_COL="%F{yellow}"
-  NAME_COL="%K{black}%B%F{blue}"
-  NAME_DIR_SEP="%K{blue}%F{black}"
-  DIR_COL="%K{blue}%F{black}"
-  DIR_END_COL="%K{black}%F{blue}"
+  UNT_COL="%F{blue}"
+  NAME_COL="%K{black}%f"
+  NAME_DIR_SEP="%K{cyan}%F{black}"
+  DIR_COL="%K{cyan}%F{black}"
+  DIR_END_COL="%K{black}%F{cyan}"
+  DIR_END_COL2="%K{boldblack}%F{cyan}"
+  GIT_COL="%K{black}%F{yellow}"
+  GIT_COL2="%K{yellow}%F{black}"
+  GIT_DONE="%K{boldblack}%F{yellow}"
+  RESET="%K{boldblack}%f"
 
   SEGMENT_SEPARATOR='⮀'
 
   # git
-  zstyle ':prezto:module:git:info:branch' format "${__PROMPT_SKWP_COLORS[3]}%b%f"
+  zstyle ':prezto:module:git:info:branch' format "$GIT_COL2%b%f"
   zstyle ':prezto:module:git:info:added' format "$ADD_COL●%f"
   zstyle ':prezto:module:git:info:deleted' format "$DEL_COL●%f"
   zstyle ':prezto:module:git:info:modified' format "$MOD_COL●%f"
   zstyle ':prezto:module:git:info:untracked' format "$UNT_COL●%f"
-  zstyle ':prezto:module:git:info:keys' format 'prompt' "${__PROMPT_SKWP_COLORS[8]}$SEGMENT_SEPARATOR %b%d%a%m%u ${__PROMPT_SKWP_COLORS[7]}$SEGMENT_SEPARATOR "
+  zstyle ':prezto:module:git:info:keys' format 'prompt' "$GIT_COL2$SEGMENT_SEPARATOR ⭠ $GIT_COL%b%d%a%m%u $GIT_DONE$SEGMENT_SEPARATOR "
+    echo -n "${ref/refs\/heads\// }"
 
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
-  PROMPT="$NAME_COL%n@%m $NAME_DIR_SEP$SEGMENT_SEPARATOR %~ $DIR_END_COL$SEGMENT_SEPARATOR "'$git_info[prompt]'"$f"
+  GIT_INFO='${git_info[prompt]}'
+
+  PROMPT="$NAME_COL%n@%m $NAME_DIR_SEP$SEGMENT_SEPARATOR %3~ $DIR_END_COL$SEGMENT_SEPARATOR $GIT_INFO$RESET"
   RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
