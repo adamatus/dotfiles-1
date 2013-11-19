@@ -50,12 +50,13 @@ function prompt_skwp_setup {
     __PROMPT_SKWP_COLORS=(
       "%F{cyan}"
       "%F{black}"
-      "%K{blue}%F{white}"
+      "%K{blue}%F{black}"
       "%F{red}"
       "%F{yellow}"
       "%F{green}"
       "%K{boldblack}%F{blue}"
       "%K{blue}%B%F{black}"
+      "%K{black}%B%F{blue}"
     )
   fi
 
@@ -63,6 +64,10 @@ function prompt_skwp_setup {
   DEL_COL="%F{black}"
   MOD_COL="%F{red}"
   UNT_COL="%F{yellow}"
+  NAME_COL="%K{black}%B%F{blue}"
+  NAME_DIR_SEP="%K{blue}%F{black}"
+  DIR_COL="%K{blue}%F{black}"
+  DIR_END_COL="%K{black}%F{blue}"
 
   SEGMENT_SEPARATOR='⮀'
 
@@ -77,7 +82,7 @@ function prompt_skwp_setup {
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
-  PROMPT="${__PROMPT_SKWP_COLORS[3]}%n%f@${__PROMPT_SKWP_COLORS[3]}%m%f ${__PROMPT_SKWP_COLORS[3]}%~%f ${__PROMPT_SKWP_COLORS[7]}$SEGMENT_SEPARATOR "'$git_info[prompt]'
+  PROMPT="$NAME_COL%n@%m $NAME_DIR_SEP$SEGMENT_SEPARATOR %~ $DIR_END_COL$SEGMENT_SEPARATOR "'$git_info[prompt]'"$f"
   RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
