@@ -187,6 +187,7 @@ of plugins above to learn more.
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
+ * `gK` - Opens the documentation for the word under the cursor.
 
 #### File Navigation
  * `,t` - CtrlP fuzzy file selector
@@ -207,6 +208,9 @@ of plugins above to learn more.
  * `,jF` factories
  * `Cmd-Shift-P` - Clear CtrlP cache
  * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
+ * `Cmd-Shift-N` - NERDTree toggle
+ * `Ctrl-\` - Show current file in NERDTree
+ * `-` open the nerdtree in the current split, rather than popping out a project drawer (uses vim-vingar)
 
 #### Better keystrokes for common editing commands
 
@@ -227,8 +231,6 @@ of plugins above to learn more.
  * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
- * `Cmd-Shift-N` - NERDTree toggle
- * `Ctrl-\` - Show current file in NERDTree
 
 #### Utility
 
