@@ -33,11 +33,11 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'fasd' \
   'git' \
+  'ruby' \
   'osx' \
   'syntax-highlighting' \
   'prompt'
 
-#  'ruby' \
 #  'ssh' \
 #  'spectrum' \
 #  'history' \

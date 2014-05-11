@@ -190,3 +190,6 @@ alias mnr='matlab -nodesktop -nosplash -r'
 
 # Copy with progress (via rsync)
 alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"
+
+alias pft='python manage.py test functional_tests'
+alias put='python manage.py test lists'

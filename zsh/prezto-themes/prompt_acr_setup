@@ -12,7 +12,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Yan Pritzker <yan@pritzker.ws>
 
-function prompt_skwp_precmd {
+function prompt_acr_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
@@ -28,14 +28,14 @@ function prompt_skwp_precmd {
   fi
 }
 
-function prompt_skwp_setup {
+function prompt_acr_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)
 
   autoload -Uz add-zsh-hook
 
-  add-zsh-hook precmd prompt_skwp_precmd
+  add-zsh-hook precmd prompt_acr_precmd
 
   ADD_COL="%F{white}"
   DEL_COL="%F{black}"
@@ -71,4 +71,4 @@ function prompt_skwp_setup {
   RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
-prompt_skwp_setup "$@"
+prompt_acr_setup "$@"
