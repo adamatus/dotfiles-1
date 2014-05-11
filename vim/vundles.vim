@@ -19,21 +19,22 @@ Bundle "gmarik/vundle"
 " All your bundles here
 
 " Ruby, Rails, Rake...
-Bundle "ecomba/vim-ruby-refactoring"
+"Bundle "ecomba/vim-ruby-refactoring"
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
-Bundle "tpope/vim-rvm.git"
-Bundle "vim-ruby/vim-ruby.git"
-Bundle "Keithbsmiley/rspec.vim"
-Bundle "skwp/vim-iterm-rspec"
-Bundle "skwp/vim-spec-finder"
+"Bundle "tpope/vim-rvm.git"
+"Bundle "vim-ruby/vim-ruby.git"
+"Bundle "Keithbsmiley/rspec.vim"
+"Bundle "skwp/vim-iterm-rspec"
+"Bundle "skwp/vim-spec-finder"
 
-Bundle "ck3g/vim-change-hash-syntax"
+"Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
-Bundle "briancollins/vim-jst"
+"Embeded javascript
+"Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
-Bundle "rodjek/vim-puppet"
+"Bundle "rodjek/vim-puppet"
 Bundle "othree/javascript-libraries-syntax.vim"
 
 " Html, Xml, Css, Markdown...
@@ -66,11 +67,13 @@ Bundle "skwp/vim-easymotion"
 Bundle "tomtom/tcomment_vim.git"
 Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/camelcasemotion.git"
-Bundle "vim-scripts/matchit.zip.git"
-Bundle "terryma/vim-multiple-cursors"
+"Bundle "vim-scripts/matchit.zip.git"
+"Bundle "terryma/vim-multiple-cursors"
 
 
 " Tabbable snippets
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate.git"
 Bundle "honza/vim-snippets"
 
@@ -79,11 +82,11 @@ Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "kien/ctrlp.vim"
 Bundle "tpope/vim-vinegar"
-Bundle "justinmk/vim-sneak"
+"Bundle "justinmk/vim-sneak"
 
 "Search
 Bundle "rking/ag.vim"
-Bundle "skwp/vim-git-grep-rails-partial"
+"Bundle "skwp/vim-git-grep-rails-partial"
 Bundle "tjennings/git-grep-vim"
 Bundle "vim-scripts/IndexedSearch"
 Bundle "nelstrom/vim-visual-star-search"
@@ -143,7 +146,8 @@ Bundle "bogado/file-line.git"
 Bundle "jby/tmux.vim.git"
 Bundle "morhetz/gruvbox"
 
-
+" Python programming
+Bundle "ivanov/vim-ipython"
 
 " Customization
 " The plugins listed in ~/.vim/.vundles.local will be added here to
