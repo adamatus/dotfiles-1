@@ -30,3 +30,7 @@ Session.vim
 # SASS
 # ----------------------------------------------------------------------------------------------
 .sass-cache
+.python-version
+
+subject_key.txt
+.ipynb_checkpoints
