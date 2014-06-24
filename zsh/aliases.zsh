@@ -193,3 +193,10 @@ alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"
 
 alias pft='python manage.py test functional_tests'
 alias put='python manage.py test lists'
+
+alias hpr='hub pull-request'
+alias grb='git recent-branches'
+
+# Finder
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
