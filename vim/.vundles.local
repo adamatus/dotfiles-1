@@ -1,0 +1,5 @@
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'guns/vim-clojure-static'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-fireplace'
